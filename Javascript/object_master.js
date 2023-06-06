@@ -37,6 +37,6 @@ console.log(pokeNames99);
 const pokeNamesPoison = pokémon.filter(p => p.types.length == 1 && p.types.includes("poison")).map(p => p.name);
 console.log(pokeNamesPoison)
 const pokeSecondFlying = pokémon.filter(p => p.types.length == 2 && p.types[1]=="flying").map(p => p.types[0]);
-console.log(pokeSecondFlying)
-const normalCount = pokémon.filter(p => p.types.includes("normal")).length
-console.log(normalCount)
+console.log(pokeSecondFlying);
+const normalCount = pokémon.filter(p => p.types.includes("normal")).length;
+console.log(normalCount);
