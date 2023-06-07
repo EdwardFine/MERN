@@ -1,16 +1,17 @@
-import MenuItems from './components/MenuItems';
+//import MenuItems from './components/MenuItems';
+import StylesComponent from './components/StylesComponents';
+import VideoDetails from './components/VideoDetails';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>My First React App</h1>
-      <MenuItems dishName={"Calamari"} price={15.25} likes={10}>
-        ***Test your food's heat level
-      </MenuItems>
-      <MenuItems dishName={"Pizza"} price={20.50} likes={8}/>
-      <MenuItems dishName={"Sushi"} price={19.10} likes={9}/>
-      <MenuItems dishName={"Prime Rib"} price={30.99} likes={10}/>
+      <StylesComponent/>
+      <hr/>
+      <VideoDetails title='Boondock Saints' views={200} hashtags={['boondock','saints','awesomemovie']}/>
+      <VideoDetails title='Creed' views={500} hashtags={['creed','boxing','Michael B Jordan']}/>
+      <VideoDetails title='Law Abiding Citizen' views={1000} hashtags={['law','dark','thriller']}/>
+      <VideoDetails title='Pulp Fiction' views={1250} hashtags={['dark','thrilling','mature']} />
     </div>
   );
 }
