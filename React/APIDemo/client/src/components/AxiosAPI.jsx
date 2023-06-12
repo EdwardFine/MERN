@@ -1,20 +1,14 @@
-//Import useState from react
-//fetch
-//CryptoAPI URL string
-//state variables
 import React,{useState} from 'react';
 import axios from 'axios';
 
-
-const FetchAPI = () => {
+const AxiosAPI = () => {
     const [coin,setCoin] = useState([]);
 
     const fetchData = () =>{
-        fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=martket_cap_desc&per_page=100")
-        .then((response)=>response.json())
+        axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=martket_cap_desc&per_page=100")
         .then((response)=>{
             console.log(response);
-            setCoin(response);
+            setCoin(response.data);
         })
         .catch((error)=>{
             console.log("This is an error from our catch method: ",error);
@@ -45,4 +39,4 @@ const FetchAPI = () => {
   )
 }
 
-export default FetchAPI;
+export default AxiosAPI
