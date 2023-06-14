@@ -1,0 +1,5 @@
+https://pokeapi.co/api/v2/pokemon/tepig
+https://pokeapi.co/api/v2/type/fire
+https://pokeapi.co/api/v2/move/dragon-rage
+https://pokeapi.co/api/v2/generation/5
+https://pokeapi.co/api/v2/item/master-ball
