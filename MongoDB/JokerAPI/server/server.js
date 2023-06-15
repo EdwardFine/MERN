@@ -9,12 +9,7 @@ app.use(express.json(),express.urlencoded({extended:true}));
 
 require('./config/mongoose.config')
 
-//One Way
-const Routes = require("./routes/jokes.routes")
-Routes(app)
-
-//Second way
-// require('./routes/users.routes')(app)
+require('./routes/jokes.routes')(app)
 
 //Step 4 - listen on a port and provide some feedback
 app.listen(port,()=>console.log("Joker API"))
