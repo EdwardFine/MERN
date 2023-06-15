@@ -1,6 +1,7 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import DisplayInfo from './pages/DisplayInfo';
+import NoSearch from './pages/NoSearch';
 import Input from './components/Input';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Input/>
       <Routes>
-        <Route path='/' element={<DisplayInfo/>}/>
+        <Route path='/' element={<NoSearch/>}/>
         <Route path='/:catagory/:id' element={<DisplayInfo/>}/>
       </Routes>
     </div>
