@@ -1,10 +1,14 @@
 import './App.css';
-import Main from './components/Main';
-
+import Main from './views/Main'
+import Detail from "./views/Detail"
+import {Routes,Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/product/:id' element={<Detail/>}/>
+      </Routes>
     </div>
   );
 }

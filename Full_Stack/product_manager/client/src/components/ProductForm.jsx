@@ -1,7 +1,7 @@
-import React,{useEffect,useState} from 'react'
+import React,{useState} from 'react'
 import axios from "axios"
 
-const Main = () => {
+const Main = (props) => {
     const [formData,setformData]=useState({title:"",price:"",description:""});
 
 
@@ -17,6 +17,7 @@ const Main = () => {
         .then((res) => console.log(res))
         .catch((err)=> console.log(err));
         setformData({title:"",price:"",description:""})
+        props.updateList();
     }
   return (
     <div>
