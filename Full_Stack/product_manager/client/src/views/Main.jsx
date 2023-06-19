@@ -12,15 +12,15 @@ const Main = () => {
         .then((res)=>{
             setProducts(res.data.result);
             setLoaded(true)
-            console.log(true)
         })
         .catch((err)=>{console.log(err)})
     },[loaded])
+
   return (
     <div>
         <ProductForm updateList={()=>setLoaded(!loaded)}/>
         <hr />
-        {loaded && <ProductList products ={products}/>}
+        {loaded && <ProductList products ={products} updateList={()=>setLoaded(!loaded)}/>}
     </div>
   )
 }
