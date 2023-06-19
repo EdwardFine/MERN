@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
-import axios from "axios"
+import React,{useState,useEffect} from 'react'
 
-const Main = (props) => {
-    const [formData,setformData]=useState({title:"",price:"",description:""});
-
+const ProductForm = (props) => {
+    const { initialTitle, initialPrice,initialDescription, onSubmitProp } = props;
+    const [formData,setformData]=useState({title:initialTitle,price:parseFloat(initialPrice).toFixed(2),description:initialDescription});
 
     const handleChange =(e)=>{
         const name = e.target.name
@@ -13,12 +12,11 @@ const Main = (props) => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8000/api/products",formData)
-        .then((res) => console.log(res))
-        .catch((err)=> console.log(err));
+        onSubmitProp(formData)
         setformData({title:"",price:"",description:""})
-        props.updateList();
     }
+
+
   return (
     <div>
         <h1>Product Manager</h1>
@@ -29,10 +27,10 @@ const Main = (props) => {
             <input type="number" name="price" value={formData.price} onChange={handleChange}/> <br />
             <label htmlFor="description">Description:</label>
             <input type="text" name='description' value={formData.description} onChange={handleChange} /> <br />
-            <button>Create Product</button>
+            <button>Submit</button>
         </form>
     </div>
   )
 }
 
-export default Main
+export default ProductForm
