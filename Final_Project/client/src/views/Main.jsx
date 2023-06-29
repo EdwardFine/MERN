@@ -48,7 +48,6 @@ const Main = () => {
 
     const setWaypoints = (waypoints) => {
         setNewLocations(false);
-        //setGasStops();
         getGasCost(getGasStops(waypoints));
     }
 
