@@ -89,6 +89,13 @@ const Main = () => {
         return points
     }
 
+    const resetTrip = ()=>{
+        setCarMiles(0);
+        setGasCost(0);
+        setStart({});
+        setEnd({});
+    }
+
     return (
         <div>
             <Accordion defaultActiveKey="0">
@@ -118,7 +125,8 @@ const Main = () => {
             {gasCost>0?
             <div style={{color:'white', marginTop:'1em'}}>
                 <h1>You can expect to spend around ${gasCost} on your roadtrip.</h1><br />
-                <h2>*Price not including filling your tank to start.</h2>
+                <h2>*Price not including filling your tank to start.</h2> <br />
+                <button className='btn btn-dark' onClick={resetTrip}>New Trip</button>
             </div>
             :""}
             <Map start={start} end={end} setRouteWaypoints={setWaypoints} newDirections={newLocations} />
